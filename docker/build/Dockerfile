@@ -1,4 +1,4 @@
-FROM rabbitmq:3.8.10-management
+FROM rabbitmq:3.8.10-management-alpine
 
 RUN apk update && apk add ca-certificates && \
     apk add tzdata && \
