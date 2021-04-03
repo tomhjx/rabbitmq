@@ -1,4 +1,4 @@
-FROM rabbitmq:3.8.10-management-alpine
+FROM rabbitmq:3.8.14-management-alpine
 
 RUN apk update && apk add ca-certificates && \
     apk add tzdata && \
@@ -7,6 +7,5 @@ RUN apk update && apk add ca-certificates && \
     rabbitmq-plugins list && \
     cd /opt/rabbitmq/plugins/ && \
     ls -al /opt/rabbitmq/plugins/ && \
-    wget https://github.com/rabbitmq/rabbitmq-autocluster/releases/download/0.10.0/autocluster-0.10.0.ez && \
-    wget https://github.com/rabbitmq/rabbitmq-autocluster/releases/download/0.10.0/rabbitmq_aws-0.10.0.ez && \
-    rabbitmq-plugins enable autocluster --offline
+    wget https://github.com/rabbitmq/rabbitmq-delayed-message-exchange/releases/download/3.8.9/rabbitmq_delayed_message_exchange-3.8.9-0199d11c.ez && \
+    rabbitmq-plugins enable rabbitmq_delayed_message_exchange
